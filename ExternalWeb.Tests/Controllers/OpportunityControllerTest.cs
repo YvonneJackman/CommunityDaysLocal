@@ -87,8 +87,8 @@
             var company = new Company
             {
                 CompanyId = id,
-                CompanyName = "First Company",
-                UserId = id
+                CompanyName = "First Company"
+
             };
             
             db.Company.Add(company);

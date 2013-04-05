@@ -119,12 +119,17 @@
                     if (model.Register.UserName != null && model.Company != null)
                     {
                         int currentUserId = WebSecurity.GetUserId(model.Register.UserName);
-                        model.Company.UserId = currentUserId;
+                        //model.Company.UserId = currentUserId;
+                        this.db.Company.Add(model.Company);
+                        this.db.SaveChanges();
+
+                        model.CompanyUserProfile = new CompanyUserProfileMap();
+                        model.CompanyUserProfile.UserId = currentUserId;
+                        model.CompanyUserProfile.CompanyId = model.Company.CompanyId;
+                        this.db.CompanyUserProfileMap.Add(model.CompanyUserProfile);
+                        this.db.SaveChanges();                               
                     }
  
-                    this.db.Company.Add(model.Company);
-                    this.db.SaveChanges();                   
-
                     return this.RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)

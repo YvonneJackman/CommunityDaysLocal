@@ -53,6 +53,16 @@
         [ForeignKey("OpportunityStatus")]
         public int OpportunityStatusId { get; set; }
 
+        [Display(Name = "RiskAssessmentCompleteFlag")]
+        public bool RiskAssessmentCompleteFlag { get; set; }
+
+        [Display(Name = "ContactMadeFlag")]
+        public bool ContactMadeFlag { get; set; }
+
+        [Column(TypeName = "ntext")]
+        [MaxLength]
+        public string Notes { get; set; }
+        
         [Display(Name = "Status")]    
         public virtual OpportunityStatus OpportunityStatus { get; set; }
 

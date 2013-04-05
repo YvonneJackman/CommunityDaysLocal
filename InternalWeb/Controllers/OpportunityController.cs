@@ -34,7 +34,7 @@
                                                     OpportunityId = opp.OpportunityId,
                                                     CompanyId = comp.CompanyId,
                                                     CompanyName = comp.CompanyName,
-                                                    CompanyApproved = comp.CompanyApproved,
+                                                    CompanyApprovedFlag = comp.CompanyApprovedFlag,
                                                     CharityNumber = comp.CharityNumber,
                                                     CompanyContactName = comp.CompanyContactName,
                                                     CompanyContactPhone = comp.CompanyContactPhone,

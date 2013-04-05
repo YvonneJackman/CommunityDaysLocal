@@ -13,5 +13,7 @@
         public Company Company { get; set; }
 
         public RegisterModel Register { get; set; }
+
+        public CompanyUserProfileMap CompanyUserProfile  { get; set; }
     }
 }

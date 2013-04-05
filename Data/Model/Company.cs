@@ -13,11 +13,8 @@
         [Key]
         public int CompanyId { get; set; }
 
-        [ForeignKey("UserProfile"), Column(Order = 0)]
-        public int UserId { get; set; }
-
         [Display(Name = "Approved")]
-        public bool CompanyApproved { get; set; }
+        public bool CompanyApprovedFlag { get; set; }
         
         [StringLength(50)]
         [Display(Name = "Company Name")]

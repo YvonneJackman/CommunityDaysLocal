@@ -19,7 +19,11 @@
         }
 
         //// The <> param is the model object and Opportunity is the name of the table to create in the database
+        public DbSet<UserProfile> UserProfiles { get; set; }
+
         public DbSet<Company> Company { get; set; }
+
+        public DbSet<CompanyUserProfileMap> CompanyUserProfileMap { get; set; }
 
         public DbSet<OpportunityStatus> OpportunityStatus { get; set; }
 
@@ -28,8 +32,6 @@
         public DbSet<OpportunityEmployeeMap> OpportunityEmployeeMap { get; set; }
 
         public DbSet<EmployeeRole> EmployeeRole { get; set; }
-
-        public DbSet<UserProfile> UserProfiles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

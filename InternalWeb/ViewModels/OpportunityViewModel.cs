@@ -14,7 +14,7 @@
         public int CompanyId { get; set; }
 
         [Display(Name = "Approved")]
-        public bool CompanyApproved { get; set; }
+        public bool CompanyApprovedFlag { get; set; }
 
         [Display(Name = "Name")]
         public string CompanyName { get; set; }
