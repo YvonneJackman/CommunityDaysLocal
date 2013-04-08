@@ -311,6 +311,7 @@
     <Content Include="Views\Opportunity\Details.cshtml" />
     <Content Include="Views\Opportunity\Create.cshtml" />
     <Content Include="Views\Opportunity\Edit.cshtml" />
+    <Content Include="Views\Opportunity\CreateOld.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

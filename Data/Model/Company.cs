@@ -47,7 +47,5 @@
         [StringLength(8)]
         [Display(Name = "Postcode")]
         public string CompanyPostcode { get; set; }
-
-        public virtual UserProfile UserProfile { get; set; }
     }
 }

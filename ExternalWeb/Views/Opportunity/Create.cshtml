@@ -1,4 +1,4 @@
-﻿@model ExternalWeb.ViewModels.OpportunityViewModel
+﻿@model  Data.Model.Opportunity
 
 @{
     ViewBag.Title = "Create an Opportunity";
@@ -14,75 +14,63 @@
         <legend>Opportunity</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Opportunity.OpportunityTitle)
+            @Html.LabelFor(model => model.OpportunityTitle)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Opportunity.OpportunityTitle)
-            @Html.ValidationMessageFor(model => model.Opportunity.OpportunityTitle)
+            @Html.EditorFor(model => model.OpportunityTitle)
+            @Html.ValidationMessageFor(model => model.OpportunityTitle)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Opportunity.OpportunityDescription)
+            @Html.LabelFor(model => model.OpportunityDescription)
         </div>
         <div class="editor-field">
-            @Html.TextAreaFor(model => model.Opportunity.OpportunityDescription)
-            @Html.ValidationMessageFor(model => model.Opportunity.OpportunityDescription)
+            @Html.TextAreaFor(model => model.OpportunityDescription)
+            @Html.ValidationMessageFor(model => model.OpportunityDescription)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Opportunity.OpportunityAdditionalInformation)
+            @Html.LabelFor(model => model.OpportunityAdditionalInformation)
         </div>
         <div class="editor-field">
-            @Html.TextAreaFor(model => model.Opportunity.OpportunityAdditionalInformation)
-            @Html.ValidationMessageFor(model => model.Opportunity.OpportunityAdditionalInformation)
+            @Html.TextAreaFor(model => model.OpportunityAdditionalInformation)
+            @Html.ValidationMessageFor(model => model.OpportunityAdditionalInformation)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Opportunity.OpportunityDate)
+            @Html.LabelFor(model => model.OpportunityDate)
+        </div>     
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OpportunityLocationName)
         </div>
         <div class="editor-field">
-         @{ 
-            DateTime dt = DateTime.Now;
-            if (Model != null) 
-            { 
-               dt  = (System.DateTime) Model.EventDate; 
-    
-            } 
-            @Html.TextBox("Opportunity.OpportunityDate", String.Format("{0:d}", dt.ToShortDateString()), 
-                new { @class = "datefield", type = "date", style="width:80px" }) 
-        } 
+            @Html.EditorFor(model => model.OpportunityLocationName)
+            @Html.ValidationMessageFor(model => model.OpportunityLocationName)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Opportunity.OpportunityLocationName)
+            @Html.LabelFor(model => model.OpportunityPostcode)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Opportunity.OpportunityLocationName)
-            @Html.ValidationMessageFor(model => model.Opportunity.OpportunityLocationName)
+            @Html.EditorFor(model => model.OpportunityPostcode, new { style = "width: 100px;" })
+            @Html.ValidationMessageFor(model => model.OpportunityPostcode)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Opportunity.OpportunityPostcode)
+            @Html.LabelFor(model => model.MinNumberofVolunteers)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Opportunity.OpportunityPostcode, new { style = "width: 100px;" })
-            @Html.ValidationMessageFor(model => model.Opportunity.OpportunityPostcode)
+            @Html.EditorFor(model => model.MinNumberofVolunteers, new { style = "width: 50px;" })
+            @Html.ValidationMessageFor(model => model.MinNumberofVolunteers)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Opportunity.MinNumberofVolunteers)
+            @Html.LabelFor(model => model.MaxNumberofVolunteers)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Opportunity.MinNumberofVolunteers, new { style = "width: 50px;" })
-            @Html.ValidationMessageFor(model => model.Opportunity.MinNumberofVolunteers)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Opportunity.MaxNumberofVolunteers)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Opportunity.MaxNumberofVolunteers, new { style = "width: 50px;" })
-            @Html.ValidationMessageFor(model => model.Opportunity.MaxNumberofVolunteers)
+            @Html.EditorFor(model => model.MaxNumberofVolunteers, new { style = "width: 50px;" })
+            @Html.ValidationMessageFor(model => model.MaxNumberofVolunteers)
         </div>
         <p>
             <input type="submit" value="Create" />
@@ -93,12 +81,3 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
-  @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.datefield').datepicker({ dateFormat: "dd/mm/yy" });
-        });
-    </script>
-    }

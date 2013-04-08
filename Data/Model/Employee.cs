@@ -30,5 +30,25 @@
 
         [Display(Name = "Postcode")]
         public string EmployeeWorkPostcode { get; set; }
+
+        [ForeignKey("Country")]
+        public int CountryId { get; set; }
+
+        [ForeignKey("Location")]
+        public int LocationId { get; set; }
+
+        [ForeignKey("Directorate")]
+        public int DirectorateId { get; set; }
+
+        [ForeignKey("Department")]
+        public int DepartmentId { get; set; }
+
+        public virtual Country Country { get; set; }
+
+        public virtual Location Location { get; set; }
+
+        public virtual Directorate Directorate { get; set; }
+
+        public virtual Department Department { get; set; }
     }
 }

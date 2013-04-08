@@ -25,13 +25,26 @@
 
         public DbSet<CompanyUserProfileMap> CompanyUserProfileMap { get; set; }
 
-        public DbSet<OpportunityStatus> OpportunityStatus { get; set; }
-
         public DbSet<Opportunity> Opportunity { get; set; }
 
         public DbSet<OpportunityEmployeeMap> OpportunityEmployeeMap { get; set; }
+        
+        /// <summary>
+        /// Lookup data
+        /// </summary>
+        /// <param name="modelBuilder"></param>
+        public DbSet<OpportunityStatus> OpportunityStatus { get; set; }
 
         public DbSet<EmployeeRole> EmployeeRole { get; set; }
+
+        public DbSet<Country> Country { get; set; }
+
+        public DbSet<Location> Location { get; set; }
+
+        public DbSet<Directorate> Directorate { get; set; }
+
+        public DbSet<Department> Department { get; set; }
+        
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

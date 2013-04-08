@@ -22,6 +22,9 @@
         [ForeignKey("EmployeeRole")]
         public int EmployeeRoleId { get; set; }
 
+        [Display(Name = "Authorised")]
+        public bool AuthorisedFlag { get; set; }
+
         public virtual Opportunity Opportunity { get; set; }
 
         public virtual Employee Employee { get; set; }

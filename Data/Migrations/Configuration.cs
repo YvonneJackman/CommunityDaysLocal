@@ -35,6 +35,7 @@
              WebSecurity.InitializeDatabaseConnection("CommunityDays", "UserProfile", "UserId", "UserName", autoCreateTables: true);
          
              this.SetupStaticLookupData(context);
+             this.SetupStaticCompanyData(context);
              this.SetupTestData(context);
          }
 
@@ -92,6 +93,136 @@
             };
             newEmployeeRole.ForEach(s => context.EmployeeRole.AddOrUpdate(s));
             //// context.SaveChanges();
+            this.SaveChanges(context);
+        }
+
+
+        /// <summary>
+        /// Create static lookup data, required not just for test
+        /// </summary>
+        /// <param name="context">The database context</param>
+        private void SetupStaticCompanyData(CommunityDaysDb context)
+        {
+
+            var newCountry = new List<Data.Model.Country>
+            {
+                new Data.Model.Country  { CountryId = 1, CountryName = "England" },
+                new Data.Model.Country  { CountryId = 2, CountryName = "Scotland" },
+                new Data.Model.Country  { CountryId = 3, CountryName = "Wales" },
+                new Data.Model.Country  { CountryId = 4, CountryName = "Ireland"  }
+            };
+            newCountry.ForEach(s => context.Country.AddOrUpdate(s));
+            this.SaveChanges(context);
+
+            var newLocation = new List<Data.Model.Location>
+            {
+                new Data.Model.Location  { LocationId = 1, LocationName = "Aberdeen", CountryId = 2},
+                new Data.Model.Location  { LocationId = 2, LocationName = "Aldershot", CountryId = 1},
+                new Data.Model.Location  { LocationId = 3, LocationName = "Basingstoke", CountryId = 1},
+                new Data.Model.Location  { LocationId = 4, LocationName = "Belfast", CountryId = 4},
+                new Data.Model.Location  { LocationId = 5, LocationName = "Bristol", CountryId = 1},
+                new Data.Model.Location  { LocationId = 6, LocationName = "Cardiff", CountryId = 3},
+                new Data.Model.Location  { LocationId = 7, LocationName = "Cumbernauld", CountryId = 2},
+                new Data.Model.Location  { LocationId = 8, LocationName = "Dublin", CountryId = 4},
+                new Data.Model.Location  { LocationId = 9, LocationName = "Dundee", CountryId = 2},
+                new Data.Model.Location  { LocationId = 10, LocationName = "Exeter", CountryId = 1},
+                new Data.Model.Location  { LocationId = 11, LocationName = "Ferrybridge", CountryId = 1},
+                new Data.Model.Location  { LocationId = 12, LocationName = "Fiddler's Ferry", CountryId = 1},
+                new Data.Model.Location  { LocationId = 13, LocationName = "Glasgow", CountryId = 2},
+                new Data.Model.Location  { LocationId = 14, LocationName = "Hedge End", CountryId = 1},
+                new Data.Model.Location  { LocationId = 15, LocationName = "Inverness", CountryId = 2},
+                new Data.Model.Location  { LocationId = 16, LocationName = "Isle of Wight", CountryId = 1},
+                new Data.Model.Location  { LocationId = 17, LocationName = "Leeds", CountryId = 1},
+                new Data.Model.Location  { LocationId = 18, LocationName = "London", CountryId = 1},
+                new Data.Model.Location  { LocationId = 19, LocationName = "Lowestoft", CountryId = 1},
+                new Data.Model.Location  { LocationId = 20, LocationName = "Melksham", CountryId = 1},
+                new Data.Model.Location  { LocationId = 21, LocationName = "New Forest", CountryId = 1},
+                new Data.Model.Location  { LocationId = 22, LocationName = "Newcastle", CountryId = 1},
+                new Data.Model.Location  { LocationId = 23, LocationName = "Oxford", CountryId = 1},
+                new Data.Model.Location  { LocationId = 24, LocationName = "Penner Road", CountryId = 1},
+                new Data.Model.Location  { LocationId = 25, LocationName = "Perth", CountryId = 2},
+                new Data.Model.Location  { LocationId = 26, LocationName = "Poole", CountryId = 1},
+                new Data.Model.Location  { LocationId = 27, LocationName = "Portsmouth", CountryId = 1},
+                new Data.Model.Location  { LocationId = 28, LocationName = "Reading", CountryId = 1},
+                new Data.Model.Location  { LocationId = 29, LocationName = "Shetland", CountryId = 2},
+                new Data.Model.Location  { LocationId = 30, LocationName = "Slough", CountryId = 1},
+                new Data.Model.Location  { LocationId = 31, LocationName = "Southampton", CountryId = 1},
+                new Data.Model.Location  { LocationId = 32, LocationName = "Taunton", CountryId = 1},
+                new Data.Model.Location  { LocationId = 33, LocationName = "Thatcham", CountryId = 1},
+                new Data.Model.Location  { LocationId = 34, LocationName = "Torquay", CountryId = 1},
+                new Data.Model.Location  { LocationId = 35, LocationName = "Yeovil", CountryId = 1}
+               /* new Data.Model.Location  { LocationId = 1, LocationName = "Aberdeen" },
+                new Data.Model.Location  { LocationId = 2, LocationName = "Aldershot" },
+                new Data.Model.Location  { LocationId = 3, LocationName = "Basingstoke" },
+                new Data.Model.Location  { LocationId = 4, LocationName = "Belfast" },
+                new Data.Model.Location  { LocationId = 5, LocationName = "Bristol" },
+                new Data.Model.Location  { LocationId = 6, LocationName = "Cardiff" },
+                new Data.Model.Location  { LocationId = 7, LocationName = "Cumbernauld" },
+                new Data.Model.Location  { LocationId = 8, LocationName = "Dublin" },
+                new Data.Model.Location  { LocationId = 9, LocationName = "Dundee" },
+                new Data.Model.Location  { LocationId = 10, LocationName = "Exeter" },
+                new Data.Model.Location  { LocationId = 11, LocationName = "Ferrybridge" },
+                new Data.Model.Location  { LocationId = 12, LocationName = "Fiddler's Ferry" },
+                new Data.Model.Location  { LocationId = 13, LocationName = "Glasgow" },
+                new Data.Model.Location  { LocationId = 14, LocationName = "Hedge End" },
+                new Data.Model.Location  { LocationId = 15, LocationName = "Inverness" },
+                new Data.Model.Location  { LocationId = 16, LocationName = "Isle of Wight" },
+                new Data.Model.Location  { LocationId = 17, LocationName = "Leeds" },
+                new Data.Model.Location  { LocationId = 18, LocationName = "London" },
+                new Data.Model.Location  { LocationId = 19, LocationName = "Lowestoft" },
+                new Data.Model.Location  { LocationId = 20, LocationName = "Melksham" },
+                new Data.Model.Location  { LocationId = 21, LocationName = "New Forest" },
+                new Data.Model.Location  { LocationId = 22, LocationName = "Newcastle" },
+                new Data.Model.Location  { LocationId = 23, LocationName = "Oxford" },
+                new Data.Model.Location  { LocationId = 24, LocationName = "Penner Road" },
+                new Data.Model.Location  { LocationId = 25, LocationName = "Perth" },
+                new Data.Model.Location  { LocationId = 26, LocationName = "Poole" },
+                new Data.Model.Location  { LocationId = 27, LocationName = "Portsmouth" },
+                new Data.Model.Location  { LocationId = 28, LocationName = "Reading" },
+                new Data.Model.Location  { LocationId = 29, LocationName = "Shetland" },
+                new Data.Model.Location  { LocationId = 30, LocationName = "Slough" },
+                new Data.Model.Location  { LocationId = 31, LocationName = "Southampton" },
+                new Data.Model.Location  { LocationId = 32, LocationName = "Taunton" },
+                new Data.Model.Location  { LocationId = 33, LocationName = "Thatcham" },
+                new Data.Model.Location  { LocationId = 34, LocationName = "Torquay" },
+                new Data.Model.Location  { LocationId = 35, LocationName = "Yeovil" } */
+            };
+            newLocation.ForEach(s => context.Location.AddOrUpdate(s));
+            this.SaveChanges(context);
+
+            var newDirectorate = new List<Data.Model.Directorate>
+            {
+                new Data.Model.Directorate  { DirectorateId = 1, DirectorateName = "CHIEF EXECUTIVE'S CENTRES", Director = "Ian Marchant" },
+                new Data.Model.Directorate  { DirectorateId = 1, DirectorateName = "NETWORKS", Director = "Mark Mathieson" },
+                new Data.Model.Directorate  { DirectorateId = 1, DirectorateName = "REGULATION", Director = "Rob McDonald" },
+                new Data.Model.Directorate  { DirectorateId = 1, DirectorateName = "CORPORATE AFFAIRS", Director = "Alan Young" },
+                new Data.Model.Directorate  { DirectorateId = 1, DirectorateName = "RENEWABLES LCP", Director = "Jim Smith" },
+                new Data.Model.Directorate  { DirectorateId = 1, DirectorateName = "GENERATION", Director = "Paul Smith" },
+                new Data.Model.Directorate  { DirectorateId = 1, DirectorateName = "RETAIL", Director = "Will Morris" },
+                new Data.Model.Directorate  { DirectorateId = 1, DirectorateName = "CONTRACTING", Director = "Kevin Greenhorn" },
+                new Data.Model.Directorate  { DirectorateId = 1, DirectorateName = "ENERGY PORTFOLIO MANAGEMENT", Director = "David Franklin" },
+                new Data.Model.Directorate  { DirectorateId = 1, DirectorateName = "FINANCE", Director = "Gregor Alexander" },
+                new Data.Model.Directorate  { DirectorateId = 1, DirectorateName = "GROUP SERVICES", Director = "Jim McPhillimy" }                
+            };
+            newDirectorate.ForEach(s => context.Directorate.AddOrUpdate(s));
+            this.SaveChanges(context);
+
+            var newDepartment = new List<Data.Model.Department>
+             {
+                new Data.Model.Department  { DepartmentId = 1, DepartmentName = "CHIEF EXECUTIVE'S CENTRES", DirectorateId = 1 },
+                new Data.Model.Department  { DepartmentId = 2, DepartmentName = "NETWORKS", DirectorateId = 2 },
+                new Data.Model.Department  { DepartmentId = 3, DepartmentName = "Power Distribution & SSEUS", DirectorateId = 2 },
+                new Data.Model.Department  { DepartmentId = 4, DepartmentName = "Transmission", DirectorateId = 2 },
+                new Data.Model.Department  { DepartmentId = 5, DepartmentName = "Utility Solutions", DirectorateId = 2 },
+                new Data.Model.Department  { DepartmentId = 6, DepartmentName = "Telecoms", DirectorateId = 2 },
+                new Data.Model.Department  { DepartmentId = 7, DepartmentName = "Lighting Services", DirectorateId = 2 },
+                new Data.Model.Department  { DepartmentId = 8, DepartmentName = "Utility Solutions - Airtricity", DirectorateId = 2 },
+                new Data.Model.Department  { DepartmentId = 9, DepartmentName = "Finance & Commercial", DirectorateId = 2 },
+                new Data.Model.Department  { DepartmentId = 10, DepartmentName = "REGULATION", DirectorateId = 3 },
+                new Data.Model.Department  { DepartmentId = 11, DepartmentName = "CORPORATE AFFAIRS", DirectorateId = 4 },
+                new Data.Model.Department  { DepartmentId = 12, DepartmentName = "RENEWABLES LCP", DirectorateId = 5 }                              
+            };
+            newDepartment.ForEach(s => context.Department.AddOrUpdate(s));
             this.SaveChanges(context);
         }
 

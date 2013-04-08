@@ -10,6 +10,7 @@
     using Data.Migrations;
     using Data.Model;
     using WebMatrix.WebData;
+    using ExternalWeb.ViewModels;
 
     public class OpportunityController : Controller
     {
@@ -67,7 +68,7 @@
         public ActionResult Create(Opportunity opportunity)
         {
             if (ModelState.IsValid)
-            {
+            {                
                 opportunity.OpportunityStatusId = 1;
                 
                 if (this.User != null)
@@ -79,10 +80,11 @@
                 }
 
                 opportunity.OpportunityCreatedDate = System.DateTime.Now;
+                opportunity.OpportunityDate = System.DateTime.Now.AddDays(30).ToShortDateString(); //TODO Temp
 
                 this.db.Opportunity.Add(opportunity);                
                 this.db.SaveChanges();
-                return this.RedirectToAction("Index", "OpportunityController");
+                return this.RedirectToAction("Index", "Opportunity");
             }
 
             ViewBag.OpportunityStatusId = new SelectList(this.db.OpportunityStatus, "OpportunityStatusId", "OpportunityStatusDescription", opportunity.OpportunityStatusId);
@@ -114,7 +116,7 @@
             {
                 this.db.Entry(opportunity).State = EntityState.Modified;
                 this.db.SaveChanges();
-                return this.RedirectToAction("Index", "OpportunityController");
+                return this.RedirectToAction("Index", "Opportunity");
             }
 
             ViewBag.OpportunityStatusId = new SelectList(this.db.OpportunityStatus, "OpportunityStatusId", "OpportunityStatusDescription", opportunity.OpportunityStatusId);
