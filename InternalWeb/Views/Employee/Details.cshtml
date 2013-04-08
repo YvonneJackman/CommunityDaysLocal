@@ -1,0 +1,108 @@
+﻿@model Data.Model.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Employee</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NTLogin)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NTLogin)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.EmployeeFirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EmployeeFirstName)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.EmployeeLastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EmployeeLastName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EmployeeContactNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EmployeeContactNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EmployeeEmail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EmployeeEmail)
+    </div>
+
+    <hr />
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ManagerFirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ManagerFirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ManagerLastName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ManagerLastName)
+    </div>
+
+    <hr />
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SendNewProjectEmailFlag)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SendNewProjectEmailFlag)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NewProjectDistance)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NewProjectDistance)
+    </div>
+
+    <hr />
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Country.CountryName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Country.CountryName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Location.LocationName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Location.LocationName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Directorate.DirectorateName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Directorate.DirectorateName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Department.DepartmentName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Department.DepartmentName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.EmployeeId }) |
+</p>

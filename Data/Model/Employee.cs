@@ -11,25 +11,38 @@
     public class Employee
     {
         [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int EmployeeId { get; set; }
 
         [Display(Name = "Login")]
         public string NTLogin { get; set; }
 
-        [Display(Name = "Name")]
-        public string EmployeeName { get; set; }
+        [Display(Name = "First Name")]
+        public string EmployeeFirstName { get; set; }
 
-        [Display(Name = "Email")]
-        public string EmployeeEmail { get; set; }
-
-        [Display(Name = "Department")]
-        public string EmployeeDepartment { get; set; }
+        [Display(Name = "Last Name")]
+        public string EmployeeLastName { get; set; }
 
         [Display(Name = "Contact Number")]
         public string EmployeeContactNumber { get; set; }
 
-        [Display(Name = "Postcode")]
-        public string EmployeeWorkPostcode { get; set; }
+        [Display(Name = "Email")]
+        public string EmployeeEmail { get; set; }
+
+        [Display(Name = "Manager Email")]
+        public string ManagerEmail { get; set; }
+
+        [Display(Name = "Manager First Name")]
+        public string ManagerFirstName { get; set; }
+
+        [Display(Name = "Manager Last Name")]
+        public string ManagerLastName { get; set; }
+
+        [Display(Name = "New Project Notification")]
+        public bool SendNewProjectEmailFlag { get; set; }
+
+        [Display(Name = "New Project Distance")]
+        public int NewProjectDistance { get; set; }
 
         [ForeignKey("Country")]
         public int CountryId { get; set; }

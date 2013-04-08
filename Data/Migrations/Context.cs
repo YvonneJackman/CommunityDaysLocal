@@ -1,4 +1,5 @@
-﻿namespace Data.Migrations
+﻿using Data.Model;
+namespace Data.Migrations
 {
     using System;
     using System.Collections.Generic;
@@ -52,5 +53,7 @@
 
             modelBuilder.Conventions.Remove<System.Data.Entity.ModelConfiguration.Conventions.PluralizingTableNameConvention>();
         }
+
+        public DbSet<Employee> Employees { get; set; }
     }
 }

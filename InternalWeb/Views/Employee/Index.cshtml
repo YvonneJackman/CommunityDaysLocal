@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Data.Model.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NTLogin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeLastName) 
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeContactNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeEmail)
+        </th> 
+        <th>
+            @Html.DisplayNameFor(model => model.ManagerLastName) 
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManagerEmail)
+        </th>   
+        <th>
+            @Html.DisplayNameFor(model => model.SendNewProjectEmailFlag)
+        </th>   
+        <th>
+            @Html.DisplayNameFor(model => model.NewProjectDistance)
+        </th>     
+        <th>
+            @Html.DisplayNameFor(model => model.Country.CountryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location.LocationName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Directorate.DirectorateName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department.DepartmentName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NTLogin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeFirstName) @Html.DisplayFor(modelItem => item.EmployeeLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeContactNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManagerFirstName) @Html.DisplayFor(modelItem => item.ManagerLastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManagerEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SendNewProjectEmailFlag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NewProjectDistance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country.CountryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location.LocationName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Directorate.DirectorateName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department.DepartmentName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EmployeeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EmployeeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EmployeeId })
+        </td>
+    </tr>
+}
+
+</table>

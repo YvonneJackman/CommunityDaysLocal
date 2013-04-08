@@ -16,12 +16,14 @@
                 </div>
                 <div class="float-right">
                     <section id="login">
-                        You are logged in as <span class="username"><b>@User.Identity.Name</b></span>
+                        You are logged in as <span class="username"><b>@User.Identity.Name</b></span>                        
+                        @Html.ActionLink("Update your employee details ", "Edit", "Employee")
                     </section>
                     <nav>
                         <ul id="menu">
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
                             <li>@Html.ActionLink("Volunteering Opportunities", "Index", "Opportunity")</li>
+                            <li>@Html.ActionLink("Employee Details", "Edit", "Employee")</li>
                             <li>@Html.ActionLink("About", "About", "Home")</li>
                             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         </ul>

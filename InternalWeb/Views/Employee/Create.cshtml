@@ -1,0 +1,137 @@
+﻿@model Data.Model.Employee
+
+@{
+    ViewBag.Title = "Employee Details";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Employee</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NTLogin)         
+        </div>
+        <div class="editor-field">
+            @Html.Display("NTLogin");       
+        </div>
+      
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmployeeFirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EmployeeFirstName)
+            @Html.ValidationMessageFor(model => model.EmployeeFirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmployeeLastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EmployeeLastName)
+            @Html.ValidationMessageFor(model => model.EmployeeLastName)
+        </div>       
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmployeeContactNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EmployeeContactNumber)
+            @Html.ValidationMessageFor(model => model.EmployeeContactNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmployeeEmail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EmployeeEmail)
+            @Html.ValidationMessageFor(model => model.EmployeeEmail)
+        </div>
+
+        <hr />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ManagerFirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ManagerFirstName)
+            @Html.ValidationMessageFor(model => model.ManagerFirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ManagerLastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ManagerLastName)
+            @Html.ValidationMessageFor(model => model.ManagerLastName)
+        </div>       
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ManagerEmail)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ManagerEmail)
+            @Html.ValidationMessageFor(model => model.ManagerEmail)
+        </div>     
+
+        <hr />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SendNewProjectEmailFlag)
+        </div>
+        <div class="editor-field">
+            @Html.CheckBoxFor(model => model.SendNewProjectEmailFlag)
+            @Html.ValidationMessageFor(model => model.SendNewProjectEmailFlag)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NewProjectDistance)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NewProjectDistance) miles
+            @Html.ValidationMessageFor(model => model.NewProjectDistance)
+        </div>
+
+        <hr />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CountryId, "Country")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CountryId", String.Empty)
+            @Html.ValidationMessageFor(model => model.CountryId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LocationId, "Location")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("LocationId", String.Empty)
+            @Html.ValidationMessageFor(model => model.LocationId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DirectorateId, "Directorate")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DirectorateId", String.Empty)
+            @Html.ValidationMessageFor(model => model.DirectorateId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DepartmentId, "Department")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DepartmentId", String.Empty)
+            @Html.ValidationMessageFor(model => model.DepartmentId)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

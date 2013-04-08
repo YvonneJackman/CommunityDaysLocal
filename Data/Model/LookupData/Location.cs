@@ -17,6 +17,10 @@
         [Display(Name = "Location Name")]
         public string LocationName { get; set; }
 
+        [StringLength(8)]
+        [Display(Name = "Postcode")]
+        public string Postcode { get; set; }
+
         //[ForeignKey("Country")]
         public int CountryId { get; set; }
 
