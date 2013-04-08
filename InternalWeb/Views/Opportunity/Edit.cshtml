@@ -15,11 +15,11 @@
         @Html.HiddenFor(model => model.OpportunityId)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CompanyId)
+            @Html.LabelFor(model => model.Company.CompanyName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.CompanyId)
-            @Html.ValidationMessageFor(model => model.CompanyId)
+            @Html.DisplayFor(model => model.Company.CompanyName)
+            @Html.ValidationMessageFor(model => model.Company.CompanyName)
         </div>
 
         <div class="editor-label">
@@ -34,8 +34,47 @@
             @Html.LabelFor(model => model.OpportunityDescription)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.OpportunityDescription)
+            @Html.TextAreaFor(model => model.OpportunityDescription)
             @Html.ValidationMessageFor(model => model.OpportunityDescription)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OpportunityAdditionalInformation)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.OpportunityAdditionalInformation)
+            @Html.ValidationMessageFor(model => model.OpportunityAdditionalInformation)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OpportunityDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OpportunityDate)
+            @Html.ValidationMessageFor(model => model.OpportunityDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OpportunityCreatedDate)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.OpportunityCreatedDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OpportunityLocationName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OpportunityLocationName)
+            @Html.ValidationMessageFor(model => model.OpportunityLocationName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OpportunityPostcode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OpportunityPostcode, new { style = "width: 100px;" })
+            @Html.ValidationMessageFor(model => model.OpportunityPostcode)
         </div>
 
         <div class="editor-label">
@@ -55,11 +94,37 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.OpportunityStatusId)
+            @Html.LabelFor(model => model.OpportunityStatusId, "OpportunityStatusId")
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.OpportunityStatusId)
+            @Html.DropDownList("OpportunityStatusId", string.Empty)
             @Html.ValidationMessageFor(model => model.OpportunityStatusId)
+        </div>
+
+
+        <h3>Status Details</h3>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RiskAssessmentCompleteFlag)
+        </div>
+        <div class="editor-field">
+            @Html.CheckBoxFor(model => model.RiskAssessmentCompleteFlag)
+            @Html.ValidationMessageFor(model => model.RiskAssessmentCompleteFlag)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ContactMadeFlag)
+        </div>
+        <div class="editor-field">
+            @Html.CheckBoxFor(model => model.ContactMadeFlag)
+            @Html.ValidationMessageFor(model => model.ContactMadeFlag)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Notes)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Notes)
+            @Html.ValidationMessageFor(model => model.Notes)
         </div>
 
         <p>

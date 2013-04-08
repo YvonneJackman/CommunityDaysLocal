@@ -11,6 +11,7 @@
     public class OpportunityStatus
     {
         [Key]
+        [Display(Name = "Opportunity Status")]
         public int OpportunityStatusId { get; set; }
 
         [StringLength(200)]
