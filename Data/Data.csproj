@@ -85,6 +85,14 @@
     <Compile Include="Migrations\201304081445576_Champion.Designer.cs">
       <DependentUpon>201304081445576_Champion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201304091221512_AddEmpOrgFields.cs" />
+    <Compile Include="Migrations\201304091221512_AddEmpOrgFields.Designer.cs">
+      <DependentUpon>201304091221512_AddEmpOrgFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304091400560_AddEmpOrgFields2.cs" />
+    <Compile Include="Migrations\201304091400560_AddEmpOrgFields2.Designer.cs">
+      <DependentUpon>201304091400560_AddEmpOrgFields2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\Context.cs" />
     <Compile Include="Model\Champion.cs" />
@@ -143,6 +151,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201304081445576_Champion.resx">
       <DependentUpon>201304081445576_Champion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304091221512_AddEmpOrgFields.resx">
+      <DependentUpon>201304091221512_AddEmpOrgFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304091400560_AddEmpOrgFields2.resx">
+      <DependentUpon>201304091400560_AddEmpOrgFields2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

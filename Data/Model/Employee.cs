@@ -29,6 +29,9 @@
         [Display(Name = "Email")]
         public string EmployeeEmail { get; set; }
 
+        [Display(Name = "Payroll Number")]
+        public string EmployeePayrollNumber { get; set; }
+
         [Display(Name = "Manager Email")]
         public string ManagerEmail { get; set; }
 
@@ -55,6 +58,9 @@
 
         [ForeignKey("Department")]
         public int DepartmentId { get; set; }
+
+        [Display(Name = "Cost Centre")]
+        public string CostCentre { get; set; }
 
         public virtual Country Country { get; set; }
 

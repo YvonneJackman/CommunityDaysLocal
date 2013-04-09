@@ -60,8 +60,10 @@
                 @Html.LabelFor(m => m.Company.CompanyPostcode )
                 @Html.TextBoxFor(m => m.Company.CompanyPostcode )
             </li>
-
-
+            <li>
+                @Html.LabelFor(m => m.Company.OptOutOfReminderEmails )
+                @Html.CheckBoxFor(m => m.Company.OptOutOfReminderEmails )
+            </li>
         </ol>
         <input type="submit" value="Register" />
     </fieldset>

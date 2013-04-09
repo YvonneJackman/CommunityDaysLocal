@@ -47,5 +47,8 @@
         [StringLength(8)]
         [Display(Name = "Postcode")]
         public string CompanyPostcode { get; set; }
+
+        [Display(Name = "Opt Out Of Reminder Emails")]
+        public bool OptOutOfReminderEmails { get; set; }
     }
 }

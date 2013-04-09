@@ -76,6 +76,14 @@
             @Html.EditorFor(model => model.MaxNumberofVolunteers, new { style = "width: 50px;" })
             @Html.ValidationMessageFor(model => model.MaxNumberofVolunteers)
         </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RecurringEventFlag)
+        </div>
+        <div class="editor-field">
+            @Html.CheckBoxFor(model => model.RecurringEventFlag)        
+        </div>
+
         <p>
             <input type="submit" value="Create" />
         </p>

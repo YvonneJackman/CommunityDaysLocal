@@ -71,6 +71,15 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.CompanyPostcode)
     </div>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OptOutOfReminderEmails)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OptOutOfReminderEmails)
+    </div>
+
+
+
 </fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id=Model.CompanyId }) |

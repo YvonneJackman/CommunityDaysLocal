@@ -6,6 +6,32 @@
 
 <h2>@ViewBag.Title</h2>
 
+<!--<h3>Search Criteria</h3>
+<table class="">
+    <tr>
+        <th>
+            Past Events
+        </th>
+        <th>
+            Postcode
+        </th>
+        <th>
+            Distance
+        </th>
+     </tr>
+     <tr>
+        <td>
+           @Html.CheckBox("ShowPastEvents", true)
+        </td>
+        <td>
+           @Html.Editor("Postcode")
+        </td>
+        <td>
+           @Html.Editor("Distance")
+        </td>
+     </tr>
+    </table>-->
+
 <table class="">
     <tr>
         <th>
@@ -19,7 +45,11 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.OpportunityLocationName)
-        </th>        
+        </th> 
+        <th>
+           Champion
+        </th>     
+             
     </tr>
 
 @foreach (var item in Model)

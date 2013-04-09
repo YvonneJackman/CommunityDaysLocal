@@ -53,8 +53,14 @@
         [ForeignKey("OpportunityStatus")]
         public int OpportunityStatusId { get; set; }
 
-        [Display(Name = "Risk Assessment Complete")]
+        [Display(Name = "Risk Assessment")]
         public bool RiskAssessmentCompleteFlag { get; set; }
+
+        [Display(Name = "Risk Assessment Id")]
+        public int RiskAssessmentDocLink { get; set; }
+
+        [Display(Name = "SEARS number")]
+        public string SEARSNumber { get; set; }
 
         [Display(Name = "Contact Made")]
         public bool ContactMadeFlag { get; set; }
@@ -63,7 +69,10 @@
         [Column(TypeName = "ntext")]
         [MaxLength]
         public string Notes { get; set; }
-        
+
+        [Display(Name = "Recurring Event Flag")]
+        public bool RecurringEventFlag { get; set; }
+                
         [Display(Name = "Status")]    
         public virtual OpportunityStatus OpportunityStatus { get; set; }
 

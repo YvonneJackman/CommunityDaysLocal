@@ -85,6 +85,13 @@
         <div class="editor-field">
             @Html.DisplayFor(model => model.CompanyPostcode)            
         </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OptOutOfReminderEmails)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.OptOutOfReminderEmails)            
+        </div>
 
         <p>
             <input type="submit" value="Save" />

@@ -103,15 +103,17 @@
             @Html.ValidationMessageFor(model => model.OpportunityStatusId)
         </div>
 
-
         <h3>Status Details</h3>
         <div class="editor-label">
             @Html.LabelFor(model => model.RiskAssessmentCompleteFlag)
         </div>
         <div class="editor-field">
-            @Html.CheckBoxFor(model => model.RiskAssessmentCompleteFlag)
-            @Html.ValidationMessageFor(model => model.RiskAssessmentCompleteFlag)
+            @Html.CheckBoxFor(model => model.RiskAssessmentCompleteFlag)            
+            @Html.EditorFor(model => model.RiskAssessmentDocLink, new { style = "width: 50px;" }) 
+            @Html.ValidationMessageFor(model => model.RiskAssessmentDocLink)
+             <a href="http://webapps/doclib/launchdocument.asp?mdocumentid=13291600&Mode=Link">Link</a>
         </div>
+       
 
         <div class="editor-label">
             @Html.LabelFor(model => model.ContactMadeFlag)
@@ -128,6 +130,21 @@
             @Html.TextAreaFor(model => model.Notes)
             @Html.ValidationMessageFor(model => model.Notes)
         </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SEARSNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SEARSNumber)
+            @Html.ValidationMessageFor(model => model.SEARSNumber)        
+            <a href="http://sears.uk.ssegroup.net/">Link</a>
+        </div>
+ 
+   
+        <h3>Audit History</h3>
+
+        <h3>Feedback</h3>
+        NPI score by company and employees
 
         <p>
             <input type="submit" value="Save" />

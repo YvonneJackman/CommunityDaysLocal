@@ -84,7 +84,6 @@
         </div>
         <div class="editor-field">
             @Html.CheckBoxFor(model => model.SendNewProjectEmailFlag)
-            @Html.ValidationMessageFor(model => model.SendNewProjectEmailFlag)
         </div>
 
         <div class="editor-label">
@@ -127,6 +126,23 @@
             @Html.DropDownList("DepartmentId", String.Empty)
             @Html.ValidationMessageFor(model => model.DepartmentId)
         </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CostCentre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CostCentre)
+            @Html.ValidationMessageFor(model => model.CostCentre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmployeePayrollNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EmployeePayrollNumber)
+            @Html.ValidationMessageFor(model => model.EmployeePayrollNumber)
+        </div>
+
 
         <p>
             <input type="submit" value="Save" />
