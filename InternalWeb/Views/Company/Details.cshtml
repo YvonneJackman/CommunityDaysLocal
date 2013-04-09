@@ -1,0 +1,78 @@
+﻿@model Data.Model.Company
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Company</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CompanyApprovedFlag)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanyApprovedFlag)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CompanyName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanyName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CharityNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CharityNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CompanyContactName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanyContactName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CompanyContactPhone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanyContactPhone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CompanyContactEmail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanyContactEmail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CompanyDetails)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanyDetails)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CompanyAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanyAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CompanyPostcode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanyPostcode)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CompanyId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

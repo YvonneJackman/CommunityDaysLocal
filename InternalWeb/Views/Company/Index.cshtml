@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Data.Model.Company>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyApprovedFlag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CharityNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyContactName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyContactPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyContactEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyDetails)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyPostcode)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyApprovedFlag)
+        </td>
+        <td>            
+            @Html.DisplayFor(modelItem => item.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CharityNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyContactName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyContactPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyContactEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyDetails)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyPostcode)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CompanyId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CompanyId })
+        </td>
+    </tr>
+}
+
+</table>

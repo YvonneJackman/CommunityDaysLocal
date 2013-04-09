@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Community Managers Admin menu";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<ul>
+ <li>@Html.ActionLink("View Companies", "Index", "Company")</li>
+ <li>@Html.ActionLink("View Opportunities", "AdminIndex", "Opportunity")</li>
+ <li>@Html.ActionLink("View Employees", "Index", "Employee")</li>
+ <li>@Html.ActionLink("Reports (todo)", "Index", "Admin")</li>
+</ul>

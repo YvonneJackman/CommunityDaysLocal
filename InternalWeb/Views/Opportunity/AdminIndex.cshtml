@@ -1,0 +1,75 @@
+﻿@model IEnumerable<InternalWeb.ViewModels.OpportunityViewModel>
+
+@{
+    ViewBag.Title = "Opportunities Admin";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<table class="">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OpportunityDate)&nbsp;&nbsp;
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OpportunityTitle)&nbsp;&nbsp;
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxNumberofVolunteers)&nbsp;&nbsp;
+        </th>
+        <th>
+            Signed up Volunteers&nbsp;&nbsp;
+        </th>   
+        <th>
+            @Html.DisplayNameFor(model => model.RiskAssessmentCompleteFlag)&nbsp;&nbsp;
+        </th>            
+        <th>
+            @Html.DisplayNameFor(model => model.ContactMadeFlag)&nbsp;&nbsp;
+        </th>   
+        <th>
+            Feedback %&nbsp;&nbsp;
+        </th> 
+        <th>
+            @Html.DisplayNameFor(model => model.OpportunityStatusDescription)&nbsp;&nbsp;
+        </th>   
+      
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpportunityDate)
+        </td>
+        <td>
+            @Html.ActionLink(item.OpportunityTitle, "Edit", new { id=item.OpportunityId })<br />      
+        </td>
+        <td>
+              @{if (item.MinNumberofVolunteers > 0 && item.MinNumberofVolunteers != item.MaxNumberofVolunteers)
+              {
+                @Html.DisplayFor(modelItem => item.MinNumberofVolunteers)<text> - </text>                    
+              }
+            }            
+            @Html.DisplayFor(modelItem => item.MaxNumberofVolunteers)
+        </td>
+        <td>
+           0
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.RiskAssessmentCompleteFlag)
+        </td>            
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactMadeFlag)
+        </td>   
+        <td>
+           0
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpportunityStatusDescription)
+        </td>
+       
+    </tr>
+}
+
+</table>

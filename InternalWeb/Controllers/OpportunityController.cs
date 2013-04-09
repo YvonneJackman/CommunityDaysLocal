@@ -58,6 +58,50 @@
         }
 
         /// <summary>
+        /// GET: /Opportunity/
+        /// </summary>
+        /// <returns>An ActionResult object</returns>
+        public ActionResult AdminIndex()
+        {
+            ViewBag.Message = "Internal Website Application.";
+            OpportunityViewModel[] viewModel = (from opp in this.db.Opportunity
+                                                join comp in this.db.Company
+                                                on opp.CompanyId equals comp.CompanyId
+                                                join oppStatus in this.db.OpportunityStatus
+                                                on opp.OpportunityStatusId equals oppStatus.OpportunityStatusId
+                                                where oppStatus.OpportunityStatusId > 0
+                                                select new OpportunityViewModel
+                                                {
+                                                    OpportunityId = opp.OpportunityId,
+                                                    CompanyId = comp.CompanyId,
+                                                    CompanyName = comp.CompanyName,
+                                                    CompanyApprovedFlag = comp.CompanyApprovedFlag,
+                                                    CharityNumber = comp.CharityNumber,
+                                                    CompanyContactName = comp.CompanyContactName,
+                                                    CompanyContactPhone = comp.CompanyContactPhone,
+                                                    CompanyContactEmail = comp.CompanyContactEmail,
+                                                    CompanyDetails = comp.CompanyDetails,
+                                                    CompanyAddress = comp.CompanyAddress,
+                                                    CompanyPostcode = comp.CompanyPostcode,
+                                                    OpportunityTitle = opp.OpportunityTitle,
+                                                    OpportunityDescription = opp.OpportunityDescription,
+                                                    OpportunityAdditionalInformation = opp.OpportunityAdditionalInformation,
+                                                    OpportunityLocationName = opp.OpportunityLocationName,
+                                                    OpportunityPostcode = opp.OpportunityPostcode,
+                                                    MinNumberofVolunteers = opp.MinNumberofVolunteers,
+                                                    MaxNumberofVolunteers = opp.MaxNumberofVolunteers,
+                                                    OpportunityDate = opp.OpportunityDate,
+                                                    OpportunityCreatedDate = opp.OpportunityCreatedDate,
+                                                    OpportunityStatusId = opp.OpportunityStatusId,
+                                                    OpportunityStatusDescription = oppStatus.OpportunityStatusDescription,
+                                                    RiskAssessmentCompleteFlag = opp.RiskAssessmentCompleteFlag,
+                                                    ContactMadeFlag = opp.ContactMadeFlag,
+                                                    Notes = opp.Notes
+                                                }).ToArray();
+            return this.View("AdminIndex", viewModel);
+        }
+
+        /// <summary>
         /// GET: /Opportunity/Details/5
         /// </summary>
         /// <param name="id">The id of the opportunity</param>

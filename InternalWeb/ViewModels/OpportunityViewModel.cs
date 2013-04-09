@@ -69,7 +69,18 @@
 
         public int OpportunityStatusId { get; set; }
 
-        [Display(Name = "Status")]    
-        public string OpportunityStatusDescription { get; set; }        
+        [Display(Name = "Current Status")]    
+        public string OpportunityStatusDescription { get; set; }
+
+        [Display(Name = "Risk Assessment Complete")]
+        public bool RiskAssessmentCompleteFlag { get; set; }
+
+        [Display(Name = "Contact Made")]
+        public bool ContactMadeFlag { get; set; }
+
+        [Display(Name = "Notes/Communication History")]
+        [Column(TypeName = "ntext")]
+        [MaxLength]
+        public string Notes { get; set; }
     }
 }

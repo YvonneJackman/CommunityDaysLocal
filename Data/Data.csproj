@@ -81,8 +81,13 @@
     <Compile Include="Migrations\201304081121309_UpdateEmpNotif.Designer.cs">
       <DependentUpon>201304081121309_UpdateEmpNotif.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201304081445576_Champion.cs" />
+    <Compile Include="Migrations\201304081445576_Champion.Designer.cs">
+      <DependentUpon>201304081445576_Champion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\Context.cs" />
+    <Compile Include="Model\Champion.cs" />
     <Compile Include="Model\CompanyUserProfileMap.cs" />
     <Compile Include="Model\AccountModel\ExternalLogin.cs" />
     <Compile Include="Model\AccountModel\LocalPasswordModel.cs" />
@@ -135,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201304081121309_UpdateEmpNotif.resx">
       <DependentUpon>201304081121309_UpdateEmpNotif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304081445576_Champion.resx">
+      <DependentUpon>201304081445576_Champion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

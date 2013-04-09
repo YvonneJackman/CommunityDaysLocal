@@ -13,6 +13,8 @@
         <legend>Opportunity</legend>
 
         @Html.HiddenFor(model => model.OpportunityId)
+        @Html.HiddenFor(model => model.CompanyId)
+        @Html.HiddenFor(model => model.OpportunityCreatedDate)
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Company.CompanyName)

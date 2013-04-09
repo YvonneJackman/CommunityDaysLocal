@@ -1,0 +1,101 @@
+﻿@model Data.Model.Company
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Company</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Company</legend>
+
+        @Html.HiddenFor(model => model.CompanyId)
+        @Html.HiddenFor(model => model.CompanyName)
+        @Html.HiddenFor(model => model.CharityNumber)
+        @Html.HiddenFor(model => model.CompanyContactName)
+        @Html.HiddenFor(model => model.CompanyContactPhone)
+        @Html.HiddenFor(model => model.CompanyContactEmail)
+        @Html.HiddenFor(model => model.CompanyDetails)
+        @Html.HiddenFor(model => model.CompanyAddress)
+        @Html.HiddenFor(model => model.CompanyPostcode)
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CompanyApprovedFlag)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CompanyApprovedFlag)
+            @Html.ValidationMessageFor(model => model.CompanyApprovedFlag)
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CompanyName)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.CompanyName)            
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CharityNumber)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.CharityNumber)            
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CompanyContactName)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.CompanyContactName)            
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CompanyContactPhone)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.CompanyContactPhone)            
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CompanyContactEmail)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.CompanyContactEmail)           
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CompanyDetails)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.CompanyDetails)            
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CompanyAddress)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.CompanyAddress)            
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CompanyPostcode)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.CompanyPostcode)            
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

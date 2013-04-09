@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<Data.Model.Employee>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Registered Employee List";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table>
     <tr>
         <th>
@@ -87,12 +84,7 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Department.DepartmentName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.EmployeeId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.EmployeeId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.EmployeeId })
-        </td>
+        </td>        
     </tr>
 }
 
