@@ -84,7 +84,8 @@
                 new Data.Model.OpportunityStatus { OpportunityStatusId = 4, OpportunityStatusDescription = "Project closed" }                
             };
             newOpportunityStatuses.ForEach(s => context.OpportunityStatus.AddOrUpdate(s));
-  
+            this.SaveChanges(context);
+
             var newEmployeeRole = new List<Data.Model.EmployeeRole>
             {
                 new Data.Model.EmployeeRole { OpportunityRoleId = 1, OpportunityRoleDescription = "Volunteer" },
@@ -92,10 +93,17 @@
                 new Data.Model.EmployeeRole { OpportunityRoleId = 3, OpportunityRoleDescription = "Champion" }
             };
             newEmployeeRole.ForEach(s => context.EmployeeRole.AddOrUpdate(s));
-            //// context.SaveChanges();
+            this.SaveChanges(context);
+
+            var newOrganisationType = new List<Data.Model.OrganisationType>
+            {
+                new Data.Model.OrganisationType { OrganisationTypeId = 1, OrganisationTypeName = "Charity" },
+                new Data.Model.OrganisationType { OrganisationTypeId = 2, OrganisationTypeName = "NPO" },
+                new Data.Model.OrganisationType { OrganisationTypeId = 3, OrganisationTypeName = "School" }
+            };
+            newOrganisationType.ForEach(s => context.OrganisationType.AddOrUpdate(s));
             this.SaveChanges(context);
         }
-
 
         /// <summary>
         /// Create static lookup data, required not just for test
@@ -103,7 +111,6 @@
         /// <param name="context">The database context</param>
         private void SetupStaticCompanyData(CommunityDaysDb context)
         {
-
             var newCountry = new List<Data.Model.Country>
             {
                 new Data.Model.Country  { CountryId = 1, CountryName = "England" },
@@ -151,41 +158,6 @@
                 new Data.Model.Location  { LocationId = 33, LocationName = "Thatcham", CountryId = 1},
                 new Data.Model.Location  { LocationId = 34, LocationName = "Torquay", CountryId = 1},
                 new Data.Model.Location  { LocationId = 35, LocationName = "Yeovil", CountryId = 1}
-               /* new Data.Model.Location  { LocationId = 1, LocationName = "Aberdeen" },
-                new Data.Model.Location  { LocationId = 2, LocationName = "Aldershot" },
-                new Data.Model.Location  { LocationId = 3, LocationName = "Basingstoke" },
-                new Data.Model.Location  { LocationId = 4, LocationName = "Belfast" },
-                new Data.Model.Location  { LocationId = 5, LocationName = "Bristol" },
-                new Data.Model.Location  { LocationId = 6, LocationName = "Cardiff" },
-                new Data.Model.Location  { LocationId = 7, LocationName = "Cumbernauld" },
-                new Data.Model.Location  { LocationId = 8, LocationName = "Dublin" },
-                new Data.Model.Location  { LocationId = 9, LocationName = "Dundee" },
-                new Data.Model.Location  { LocationId = 10, LocationName = "Exeter" },
-                new Data.Model.Location  { LocationId = 11, LocationName = "Ferrybridge" },
-                new Data.Model.Location  { LocationId = 12, LocationName = "Fiddler's Ferry" },
-                new Data.Model.Location  { LocationId = 13, LocationName = "Glasgow" },
-                new Data.Model.Location  { LocationId = 14, LocationName = "Hedge End" },
-                new Data.Model.Location  { LocationId = 15, LocationName = "Inverness" },
-                new Data.Model.Location  { LocationId = 16, LocationName = "Isle of Wight" },
-                new Data.Model.Location  { LocationId = 17, LocationName = "Leeds" },
-                new Data.Model.Location  { LocationId = 18, LocationName = "London" },
-                new Data.Model.Location  { LocationId = 19, LocationName = "Lowestoft" },
-                new Data.Model.Location  { LocationId = 20, LocationName = "Melksham" },
-                new Data.Model.Location  { LocationId = 21, LocationName = "New Forest" },
-                new Data.Model.Location  { LocationId = 22, LocationName = "Newcastle" },
-                new Data.Model.Location  { LocationId = 23, LocationName = "Oxford" },
-                new Data.Model.Location  { LocationId = 24, LocationName = "Penner Road" },
-                new Data.Model.Location  { LocationId = 25, LocationName = "Perth" },
-                new Data.Model.Location  { LocationId = 26, LocationName = "Poole" },
-                new Data.Model.Location  { LocationId = 27, LocationName = "Portsmouth" },
-                new Data.Model.Location  { LocationId = 28, LocationName = "Reading" },
-                new Data.Model.Location  { LocationId = 29, LocationName = "Shetland" },
-                new Data.Model.Location  { LocationId = 30, LocationName = "Slough" },
-                new Data.Model.Location  { LocationId = 31, LocationName = "Southampton" },
-                new Data.Model.Location  { LocationId = 32, LocationName = "Taunton" },
-                new Data.Model.Location  { LocationId = 33, LocationName = "Thatcham" },
-                new Data.Model.Location  { LocationId = 34, LocationName = "Torquay" },
-                new Data.Model.Location  { LocationId = 35, LocationName = "Yeovil" } */
             };
             newLocation.ForEach(s => context.Location.AddOrUpdate(s));
             this.SaveChanges(context);
@@ -281,11 +253,16 @@
 
             var newCompanies = new List<Data.Model.Company>
             {
-                new Data.Model.Company { CompanyId = 1, CompanyName = "BREADALBANE CANOE CLUB", CompanyApprovedFlag = true, CompanyContactName = "Mary Shoe", CompanyContactEmail = "Mary@canoe.com", CompanyContactPhone = "02392 123123", CompanyAddress = "ABERFELDY", CompanyPostcode = "BD23 1PT", CharityNumber = "0", CompanyDetails = "Breadalbane Canoe Club is an active and inclusive club promoting both competitive and recreational paddling. We encourage participation at all levels and work to protect, improve and promote responsible paddle sports." },
+               new Data.Model.Company { CompanyId = 1, OrganisationTypeId = 2, CompanyName = "BREADALBANE CANOE CLUB", CompanyApprovedFlag = true, CompanyContactName = "Mary Shoe", CompanyContactEmail = "Mary@canoe.com", CompanyContactPhone = "02392 123123", CompanyAddress = "ABERFELDY", CompanyPostcode = "BD23 1PT", CharityNumber = "0", CompanyDetails = "Breadalbane Canoe Club is an active and inclusive club promoting both competitive and recreational paddling. We encourage participation at all levels and work to protect, improve and promote responsible paddle sports." },
+                new Data.Model.Company { CompanyId = 2, OrganisationTypeId = 1, CompanyName = "RNLI", CompanyApprovedFlag = true, CompanyContactName = "Brian Boat", CompanyContactEmail = "Brian@RNLI.com", CompanyContactPhone = "02392 998877", CompanyAddress = "London", CompanyPostcode = string.Empty, CharityNumber = "0", CompanyDetails = "The RNLI is the charity that saves lives at sea" },            
+                new Data.Model.Company { CompanyId = 3, OrganisationTypeId = 3, CompanyName = "St Stephens Primary School, Blairgowrie", CompanyApprovedFlag = true, CompanyContactName = "Sarah School", CompanyContactEmail = "Sarah@school.com", CompanyContactPhone = "02392 334455", CompanyAddress = "Coupar Angus", CompanyPostcode = string.Empty, CharityNumber = "0", CompanyDetails = "Fund-raising for school projects" },            
+                new Data.Model.Company { CompanyId = 4, OrganisationTypeId = 2, CompanyName = "Whizz Kidz", CompanyApprovedFlag = true, CompanyContactName = "Keith Kidd", CompanyContactEmail = "Keith@whizzkids.com", CompanyContactPhone = "02392 889900", CompanyAddress = "London", CompanyPostcode = string.Empty, CharityNumber = "0", CompanyDetails = "Whizz-Kidz provides disabled children with the essential wheelchairs and other mobility equipment they need to lead fun and active childhoods." },      
+                new Data.Model.Company { CompanyId = 5, OrganisationTypeId = 1, CompanyName = "Breast Cancer Care", CompanyApprovedFlag = true, CompanyContactName = "Brenda Boom", CompanyContactEmail = "Brenda@bcc.com", CompanyContactPhone = "02392 223355", CompanyAddress = "Scotland", CompanyPostcode = string.Empty, CharityNumber = "0", CompanyDetails = "http://www.breastcancercare.org.uk/ Follow Breast Cancer Care Scotland on Twitter @BccareScot" },                              
+                /* new Data.Model.Company { CompanyId = 1, CompanyName = "BREADALBANE CANOE CLUB", CompanyApprovedFlag = true, CompanyContactName = "Mary Shoe", CompanyContactEmail = "Mary@canoe.com", CompanyContactPhone = "02392 123123", CompanyAddress = "ABERFELDY", CompanyPostcode = "BD23 1PT", CharityNumber = "0", CompanyDetails = "Breadalbane Canoe Club is an active and inclusive club promoting both competitive and recreational paddling. We encourage participation at all levels and work to protect, improve and promote responsible paddle sports." },
                 new Data.Model.Company { CompanyId = 2, CompanyName = "RNLI", CompanyApprovedFlag = true, CompanyContactName = "Brian Boat", CompanyContactEmail = "Brian@RNLI.com", CompanyContactPhone = "02392 998877", CompanyAddress = "London", CompanyPostcode = string.Empty, CharityNumber = "0", CompanyDetails = "The RNLI is the charity that saves lives at sea" },            
                 new Data.Model.Company { CompanyId = 3, CompanyName = "St Stephens Primary School, Blairgowrie", CompanyApprovedFlag = true, CompanyContactName = "Sarah School", CompanyContactEmail = "Sarah@school.com", CompanyContactPhone = "02392 334455", CompanyAddress = "Coupar Angus", CompanyPostcode = string.Empty, CharityNumber = "0", CompanyDetails = "Fund-raising for school projects" },            
                 new Data.Model.Company { CompanyId = 4, CompanyName = "Whizz Kidz", CompanyApprovedFlag = true, CompanyContactName = "Keith Kidd", CompanyContactEmail = "Keith@whizzkids.com", CompanyContactPhone = "02392 889900", CompanyAddress = "London", CompanyPostcode = string.Empty, CharityNumber = "0", CompanyDetails = "Whizz-Kidz provides disabled children with the essential wheelchairs and other mobility equipment they need to lead fun and active childhoods." },      
-                new Data.Model.Company { CompanyId = 5, CompanyName = "Breast Cancer Care", CompanyApprovedFlag = true, CompanyContactName = "Brenda Boom", CompanyContactEmail = "Brenda@bcc.com", CompanyContactPhone = "02392 223355", CompanyAddress = "Scotland", CompanyPostcode = string.Empty, CharityNumber = "0", CompanyDetails = "http://www.breastcancercare.org.uk/ Follow Breast Cancer Care Scotland on Twitter @BccareScot" },              
+                new Data.Model.Company { CompanyId = 5, CompanyName = "Breast Cancer Care", CompanyApprovedFlag = true, CompanyContactName = "Brenda Boom", CompanyContactEmail = "Brenda@bcc.com", CompanyContactPhone = "02392 223355", CompanyAddress = "Scotland", CompanyPostcode = string.Empty, CharityNumber = "0", CompanyDetails = "http://www.breastcancercare.org.uk/ Follow Breast Cancer Care Scotland on Twitter @BccareScot" },*/
             };
 
             newCompanies.ForEach(s => context.Company.AddOrUpdate(s));

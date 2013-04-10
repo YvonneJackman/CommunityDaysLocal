@@ -93,6 +93,46 @@
     <Compile Include="Migrations\201304091400560_AddEmpOrgFields2.Designer.cs">
       <DependentUpon>201304091400560_AddEmpOrgFields2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201304091503371_AddOrgType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201304091503371_AddOrgType.Designer.cs">
+      <DependentUpon>201304091503371_AddOrgType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304091503371_AddOrgTypePart2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201304091503371_AddOrgTypePart2.Designer.cs">
+      <DependentUpon>201304091503371_AddOrgTypePart2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304091529197_AddEmpOrgFieldsPart3.cs" />
+    <Compile Include="Migrations\201304091529197_AddEmpOrgFieldsPart3.Designer.cs">
+      <DependentUpon>201304091529197_AddEmpOrgFieldsPart3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304091531077_AddEmpOrgFieldsPart4.cs" />
+    <Compile Include="Migrations\201304091531077_AddEmpOrgFieldsPart4.Designer.cs">
+      <DependentUpon>201304091531077_AddEmpOrgFieldsPart4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304100806224_AddEmpOrgFieldsPart5.cs" />
+    <Compile Include="Migrations\201304100806224_AddEmpOrgFieldsPart5.Designer.cs">
+      <DependentUpon>201304100806224_AddEmpOrgFieldsPart5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304100912415_AddEmpOrgFieldsPart6.cs" />
+    <Compile Include="Migrations\201304100912415_AddEmpOrgFieldsPart6.Designer.cs">
+      <DependentUpon>201304100912415_AddEmpOrgFieldsPart6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304100926483_AddEmpOrgFieldsPart7FK.cs" />
+    <Compile Include="Migrations\201304100926483_AddEmpOrgFieldsPart7FK.Designer.cs">
+      <DependentUpon>201304100926483_AddEmpOrgFieldsPart7FK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304100928439_AddEmpOrgFieldsPart8FK.cs" />
+    <Compile Include="Migrations\201304100928439_AddEmpOrgFieldsPart8FK.Designer.cs">
+      <DependentUpon>201304100928439_AddEmpOrgFieldsPart8FK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201304100957564_NetPromoterScore.cs" />
+    <Compile Include="Migrations\201304100957564_NetPromoterScore.Designer.cs">
+      <DependentUpon>201304100957564_NetPromoterScore.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\Context.cs" />
     <Compile Include="Model\Champion.cs" />
@@ -110,6 +150,7 @@
     <Compile Include="Model\LookupData\Directorate.cs" />
     <Compile Include="Model\LookupData\EmployeeRole.cs" />
     <Compile Include="Model\LookupData\Location.cs" />
+    <Compile Include="Model\LookupData\OrganisationType.cs" />
     <Compile Include="Model\Opportunity.cs" />
     <Compile Include="Model\OpportunityEmployeeMap.cs" />
     <Compile Include="Model\LookupData\OpportunityStatus.cs" />
@@ -157,6 +198,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201304091400560_AddEmpOrgFields2.resx">
       <DependentUpon>201304091400560_AddEmpOrgFields2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304091503371_AddOrgType.resx">
+      <DependentUpon>201304091503371_AddOrgType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304091503371_AddOrgTypePart2.resx">
+      <DependentUpon>201304091503371_AddOrgTypePart2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304091529197_AddEmpOrgFieldsPart3.resx">
+      <DependentUpon>201304091529197_AddEmpOrgFieldsPart3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304091531077_AddEmpOrgFieldsPart4.resx">
+      <DependentUpon>201304091531077_AddEmpOrgFieldsPart4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304100806224_AddEmpOrgFieldsPart5.resx">
+      <DependentUpon>201304100806224_AddEmpOrgFieldsPart5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304100912415_AddEmpOrgFieldsPart6.resx">
+      <DependentUpon>201304100912415_AddEmpOrgFieldsPart6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304100926483_AddEmpOrgFieldsPart7FK.resx">
+      <DependentUpon>201304100926483_AddEmpOrgFieldsPart7FK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304100928439_AddEmpOrgFieldsPart8FK.resx">
+      <DependentUpon>201304100928439_AddEmpOrgFieldsPart8FK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201304100957564_NetPromoterScore.resx">
+      <DependentUpon>201304100957564_NetPromoterScore.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -45,8 +45,11 @@ namespace Data.Migrations
         public DbSet<Directorate> Directorate { get; set; }
 
         public DbSet<Department> Department { get; set; }
-        
 
+    //    public DbSet<Champion> Champion { get; set; }
+
+        public DbSet<OrganisationType> OrganisationType { get; set; }
+        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

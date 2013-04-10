@@ -33,6 +33,11 @@
                 @Html.TextBoxFor(m => m.Company.CompanyName)
             </li>
             <li>
+                @Html.LabelFor(m => m.Company.OrganisationTypeId)
+                @Html.DropDownList("OrganisationTypeId", String.Empty)    
+                @Html.ValidationMessageFor(m => m.Company.OrganisationTypeId)            
+            </li>
+            <li>
                 @Html.LabelFor(m => m.Company.CharityNumber)
                 @Html.TextBoxFor(m => m.Company.CharityNumber)
             </li>

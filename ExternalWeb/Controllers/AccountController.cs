@@ -95,6 +95,7 @@
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ViewBag.OrganisationTypeId = new SelectList(db.OrganisationType, "OrganisationTypeId", "OrganisationTypeName");
             return this.View();
         }
 
@@ -110,6 +111,8 @@
         {
             if (ModelState.IsValid)
             {
+                ViewBag.OrganisationTypeId = new SelectList(db.OrganisationType, "OrganisationTypeId", "OrganisationTypeName", model.Company.OrganisationTypeId);
+
                 // Attempt to register the user
                 try
                 {
@@ -118,6 +121,11 @@
 
                     if (model.Register.UserName != null && model.Company != null)
                     {
+                        if (model.Company.OrganisationTypeId == 0)
+                        {
+                            model.Company.OrganisationTypeId = 1; //todo temp
+                        }
+
                         int currentUserId = WebSecurity.GetUserId(model.Register.UserName);
                         //model.Company.UserId = currentUserId;
                         this.db.Company.Add(model.Company);

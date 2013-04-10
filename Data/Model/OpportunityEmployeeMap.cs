@@ -25,6 +25,9 @@
         [Display(Name = "Authorised")]
         public bool AuthorisedFlag { get; set; }
 
+        [Range (0, 10)]
+        public int NetPromoterScore { get; set; }
+
         public virtual Opportunity Opportunity { get; set; }
 
         public virtual Employee Employee { get; set; }

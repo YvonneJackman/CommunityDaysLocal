@@ -72,10 +72,13 @@
 
         [Display(Name = "Recurring Event Flag")]
         public bool RecurringEventFlag { get; set; }
-                
-        [Display(Name = "Status")]    
+
+        [Range(0, 10)]
+        [Display(Name = "Feedback Score")]
+        public int NetPromoterScore { get; set; }
+
         public virtual OpportunityStatus OpportunityStatus { get; set; }
 
-        public virtual Company Company { get; set; }
+        public virtual Company Company { get; set; }       
     }
 }

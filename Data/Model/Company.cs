@@ -23,6 +23,10 @@
         [StringLength(10)]
         [Display(Name = "Charity Number")]
         public string CharityNumber { get; set; }
+
+        [ForeignKey("OrganisationType")]
+        [Display(Name = "OrganisationType")]
+        public int OrganisationTypeId { get; set; }
         
         [StringLength(50)]
         [Display(Name = "Contact Name")]
@@ -50,5 +54,7 @@
 
         [Display(Name = "Opt Out Of Reminder Emails")]
         public bool OptOutOfReminderEmails { get; set; }
+
+        public virtual OrganisationType OrganisationType { get; set; }
     }
 }
