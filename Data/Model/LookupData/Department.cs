@@ -17,7 +17,7 @@
         [Display(Name = "Department Name")]
         public string DepartmentName { get; set; }
 
-        //[ForeignKey("Directorate")]
+        //[ForeignKey("Directorate")] todo
         public int DirectorateId { get; set; }
 
         public virtual Directorate Directorate { get; set; }

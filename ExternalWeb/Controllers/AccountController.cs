@@ -95,7 +95,7 @@
         [AllowAnonymous]
         public ActionResult Register()
         {
-            ViewBag.OrganisationTypeId = new SelectList(db.OrganisationType, "OrganisationTypeId", "OrganisationTypeName");
+            ViewBag.OrganisationTypeId = new SelectList(this.db.OrganisationType, "OrganisationTypeId", "OrganisationTypeName");
             return this.View();
         }
 
@@ -111,23 +111,24 @@
         {
             if (ModelState.IsValid)
             {
-                ViewBag.OrganisationTypeId = new SelectList(db.OrganisationType, "OrganisationTypeId", "OrganisationTypeName", model.Company.OrganisationTypeId);
+                ViewBag.OrganisationTypeId = new SelectList(this.db.OrganisationType, "OrganisationTypeId", "OrganisationTypeName", model.Company.OrganisationTypeId);
 
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.Register.UserName, model.Register.Password);
-                    WebSecurity.Login(model.Register.UserName, model.Register.Password);
-
-                    if (model.Register.UserName != null && model.Company != null)
+                    string retVal = WebSecurity.CreateUserAndAccount(model.Register.UserName, model.Register.Password);
+                    bool success = WebSecurity.Login(model.Register.UserName, model.Register.Password);
+                    
+                    //todo check success of user profile create
+                    if (model.Register.UserName != null && model.Company != null && success)
                     {
                         if (model.Company.OrganisationTypeId == 0)
                         {
-                            model.Company.OrganisationTypeId = 1; //todo temp
+                            model.Company.OrganisationTypeId = 1; // todo temp
                         }
 
                         int currentUserId = WebSecurity.GetUserId(model.Register.UserName);
-                        //model.Company.UserId = currentUserId;
+                        //// model.Company.UserId = currentUserId;
                         this.db.Company.Add(model.Company);
                         this.db.SaveChanges();
 

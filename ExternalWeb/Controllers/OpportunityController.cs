@@ -9,8 +9,8 @@
     using System.Web.Mvc;
     using Data.Migrations;
     using Data.Model;
-    using WebMatrix.WebData;
     using ExternalWeb.ViewModels;
+    using WebMatrix.WebData;
 
     public class OpportunityController : Controller
     {

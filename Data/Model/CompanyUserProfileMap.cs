@@ -22,6 +22,5 @@
         public virtual Company Company { get; set; }
 
         public virtual UserProfile UserProfile { get; set; }
-
     }
 }

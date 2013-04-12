@@ -123,10 +123,9 @@
         /// <param name="id">The id of the opportunity to edit</param>
         /// <returns>An ActionResult object</returns>
         public ActionResult Edit(int id = 0)
-        {
-            
+        {            
             Opportunity opportunity = this.db.Opportunity.Find(id);
-            ViewBag.OpportunityStatusId = new SelectList(db.OpportunityStatus, "OpportunityStatusId", "OpportunityStatusDescription", opportunity.OpportunityStatusId);
+            ViewBag.OpportunityStatusId = new SelectList(this.db.OpportunityStatus, "OpportunityStatusId", "OpportunityStatusDescription", opportunity.OpportunityStatusId);
             if (opportunity == null)
             {
                 return this.HttpNotFound();

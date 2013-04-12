@@ -88,7 +88,6 @@
             {
                 CompanyId = id,
                 CompanyName = "First Company"
-
             };
             
             db.Company.Add(company);

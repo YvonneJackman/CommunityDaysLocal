@@ -21,7 +21,7 @@
         [Display(Name = "Postcode")]
         public string Postcode { get; set; }
 
-        //[ForeignKey("Country")]
+        //[ForeignKey("Country")] todo
         public int CountryId { get; set; }
 
         public virtual Country Country { get; set; }

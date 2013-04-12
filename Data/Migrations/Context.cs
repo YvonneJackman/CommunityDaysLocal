@@ -1,5 +1,4 @@
-﻿using Data.Model;
-namespace Data.Migrations
+﻿namespace Data.Migrations
 {
     using System;
     using System.Collections.Generic;
@@ -7,7 +6,7 @@ namespace Data.Migrations
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    using Data.Model;
+    using Data.Model;  
 
     /// <summary>
     /// Setting the base avoids having the full namespace prefix for the database name
@@ -29,9 +28,11 @@ namespace Data.Migrations
         public DbSet<Opportunity> Opportunity { get; set; }
 
         public DbSet<OpportunityEmployeeMap> OpportunityEmployeeMap { get; set; }
-        
+
+        public DbSet<Employee> Employees { get; set; }
+
         /// <summary>
-        /// Lookup data
+        /// Sets up Lookup data
         /// </summary>
         /// <param name="modelBuilder"></param>
         public DbSet<OpportunityStatus> OpportunityStatus { get; set; }
@@ -46,17 +47,15 @@ namespace Data.Migrations
 
         public DbSet<Department> Department { get; set; }
 
-    //    public DbSet<Champion> Champion { get; set; }
+        //    public DbSet<Champion> Champion { get; set; } todo
 
         public DbSet<OrganisationType> OrganisationType { get; set; }
-        
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Conventions.Remove<System.Data.Entity.ModelConfiguration.Conventions.PluralizingTableNameConvention>();
-        }
-
-        public DbSet<Employee> Employees { get; set; }
+        }    
     }
 }
